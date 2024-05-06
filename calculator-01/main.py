@@ -22,5 +22,7 @@ class MyApp(App):
             It appends the text of the pressed button (instance.text) to the output_label text,
             when a button is pressed. """    
             output_lable.text += instance.text
-        
+            
+        for button in button_grid.children[1:]: #  iterate over all buttons in the button_grid except the first one (which is the clear button). 
+            button.bind(on_press=print_button_text) # We bind the print_button_text function to the on_press event of each button. #  iterate over all buttons in the button_grid except the first one (which is the clear button). 
             
