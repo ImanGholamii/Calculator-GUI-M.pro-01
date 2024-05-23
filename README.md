@@ -20,9 +20,9 @@ Special thanks to the developers behind the Kivy library for providing such a ve
 
 # Commit type Emoji
 Initial commit 🎉 General update ⚡ Reverting changes ⏪ Critical hotfix 🚑 Merging branches 🔀
-
+#
 <div dir="rtl">
-<hr>
+
 امیدوارم توضیحات زیر به درک بهترتون از اجزای کد کمک کنه.
 ### اجزای اصلی و مشترک در پروژه‌های Kivy
 
