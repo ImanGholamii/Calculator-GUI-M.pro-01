@@ -120,6 +120,10 @@ Initial commit 🎉 General update ⚡ Reverting changes ⏪ Critical hotfix �
 
 5. **نهایی‌سازی رابط کاربری**:
     - افزودن لیبل، گرید دکمه‌ها و دکمه پاک کردن به ویجت ریشه و بازگرداندن آن.
+    *نقش add_widget*
+    متد `add_widget` برای افزودن یک ویجت به لیست فرزندان یک ویجت دیگر استفاده می‌شود.
+    این متد باعث می‌شود که ویجت فرزند در چیدمان ویجت والد ظاهر شود.
+
     ```python
     root_widget.add_widget(output_label)
     root_widget.add_widget(button_grid)
