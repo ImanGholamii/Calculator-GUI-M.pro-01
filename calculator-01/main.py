@@ -10,12 +10,12 @@ class MyApp(App):
         output_lable = Label(size_hint_y=0.5, font_size=50)
         button_symbols = ('1', '2', '3', '+',
                           '4', '5', '6', '-',
-                          '7', '8', '9', '.',
-                          '0', '*', '/', '=')
-        button_grid = GridLayout(cols=4, size_hint_y=1.5)
+                          '7', '8', '9', '*',
+                          '0', '.', '/', '=')
+        button_grid = GridLayout(cols=4, size_hint_y=0.5)
         for symbol in button_symbols:
             button_grid.add_widget(Button(text=symbol))
-        clear_button = Button(text = 'Clear', size_hint_y=None, height=85)
+        clear_button = Button(text = 'Clear', size_hint_y=None, height=75)
         
         def print_button_text(instance):
             """ takes an instance (a button instance) as an argument.
@@ -28,6 +28,7 @@ class MyApp(App):
         
         def resize_lable_text(lable, new_height):
             lable.fontsize = 0.5*lable.height
+            
         output_lable.bind(height=resize_lable_text)
         
         def evaluate_resulte(instance):
@@ -35,5 +36,15 @@ class MyApp(App):
                 output_lable.text = str(eval(output_lable.text))
             except SyntaxError:
                 output_lable.text = 'Python Syntax Error!'
-        button_grid.children[0].bind(on_press=evaluate_result)
-                
+        button_grid.children[0].bind(on_press=evaluate_resulte)
+        
+        def clear_label(instance):
+            output_lable.text = " "        
+        
+        clear_button.bind(on_press=clear_label)    
+        
+        root_widget.add_widget(output_lable)
+        root_widget.add_widget(button_grid)
+        root_widget.add_widget(clear_button)
+        return root_widget
+MyApp().run()
